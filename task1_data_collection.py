@@ -1,1 +1,91 @@
-{"nbformat":4,"nbformat_minor":0,"metadata":{"colab":{"provenance":[],"authorship_tag":"ABX9TyNWUpQ3MYTDi1gkU/VQqC4z"},"kernelspec":{"name":"python3","display_name":"Python 3"},"language_info":{"name":"python"}},"cells":[{"cell_type":"code","source":["import requests\n","import json\n","import time\n","import os\n","from datetime import datetime\n","\n","# Headers set\n","HEADERS = {\"User-Agent\": \"TrendPulse/1.0\"}\n","\n","KEYWORDS = {\n","    \"technology\": [\"ai\", \"software\", \"tech\", \"code\", \"computer\", \"data\", \"cloud\", \"api\", \"gpu\", \"llm\"],\n","    \"worldnews\": [\"war\", \"government\", \"country\", \"president\", \"election\", \"climate\", \"attack\", \"global\"],\n","    \"sports\": [\"nfl\", \"nba\", \"fifa\", \"sport\", \"game\", \"team\", \"player\", \"league\", \"championship\"],\n","    \"science\": [\"research\", \"study\", \"space\", \"physics\", \"biology\", \"discovery\", \"nasa\", \"genome\"],\n","    \"entertainment\": [\"movie\", \"film\", \"music\", \"netflix\", \"game\", \"book\", \"show\", \"award\", \"streaming\"]\n","}\n","\n","def main():\n","    if not os.path.exists('data'):\n","        os.makedirs('data')\n","        print(\"Directory 'data' created.\")\n","\n","    # Top 500 story IDs fetch\n","    try:\n","        top_ids_url = \"https://hacker-news.firebaseio.com/v0/topstories.json\"\n","        response = requests.get(top_ids_url, headers=HEADERS)\n","\n","        if response.status_code != 200:\n","            print(f\"Error fetching IDs: Status {response.status_code}\")\n","            return\n","\n","        all_ids = response.json()[:500]\n","        print(f\"Fetched {len(all_ids)} story IDs from HackerNews.\")\n","    except Exception as e:\n","        print(f\"Failed to connect to API: {e}\")\n","        return\n","\n","    final_data = []\n","\n","    # filtering data as par categories\n","    for category, words in KEYWORDS.items():\n","        print(f\"Collecting stories for category: {category}...\")\n","        category_count = 0\n","\n","        for story_id in all_ids:\n","            if category_count >= 25:\n","                break\n","\n","            try:\n","                item_url = f\"https://hacker-news.firebaseio.com/v0/item/{story_id}.json\"\n","                item_response = requests.get(item_url, headers=HEADERS)\n","\n","                if item_response.status_code != 200:\n","                    continue\n","\n","                story = item_response.json()\n","\n","                if story and 'title' in story:\n","                    title_text = story['title'].lower()\n","\n","                    if any(word in title_text for word in words):\n","                        record = {\n","                            \"post_id\": story.get('id'),\n","                            \"title\": story.get('title'),\n","                            \"category\": category,\n","                            \"score\": story.get('score', 0),\n","                            \"num_comments\": story.get('descendants', 0),\n","                            \"author\": story.get('by', 'Unknown'),\n","                            \"collected_at\": datetime.now().strftime(\"%Y-%m-%d %H:%M:%S\")\n","                        }\n","                        final_data.append(record)\n","                        category_count += 1\n","            except:\n","                print(f\"Skipping ID {story_id} due to fetch error.\")\n","                continue\n","\n","        print(f\"Category '{category}' done. Waiting 2 seconds...\")\n","        time.sleep(2)\n","\n","    # JSON File save\n","    today_str = datetime.now().strftime(\"%Y%m%d\")\n","    output_file = f\"data/trends_{today_str}.json\"\n","\n","    with open(output_file, 'w') as f:\n","        json.dump(final_data, f, indent=4)\n","\n","    print(\"-\" * 30)\n","    print(f\"Collected {len(final_data)} stories. Saved to {output_file}\")\n","\n","if __name__ == \"__main__\":\n","    main()"],"metadata":{"colab":{"base_uri":"https://localhost:8080/"},"id":"SJ0X3XD4o5-e","executionInfo":{"status":"ok","timestamp":1775742432596,"user_tz":-330,"elapsed":176069,"user":{"displayName":"Kaustubh Dawbhat","userId":"04829877058264364037"}},"outputId":"ab088d03-4848-4705-e2b6-fd612e576da7"},"execution_count":1,"outputs":[{"output_type":"stream","name":"stdout","text":["Directory 'data' created.\n","Fetched 500 story IDs from HackerNews.\n","Collecting stories for category: technology...\n","Category 'technology' done. Waiting 2 seconds...\n","Collecting stories for category: worldnews...\n","Skipping ID 47675302 due to fetch error.\n","Skipping ID 47690434 due to fetch error.\n","Skipping ID 47682444 due to fetch error.\n","Category 'worldnews' done. Waiting 2 seconds...\n","Collecting stories for category: sports...\n","Skipping ID 47694093 due to fetch error.\n","Skipping ID 47654317 due to fetch error.\n","Skipping ID 47694303 due to fetch error.\n","Skipping ID 47674996 due to fetch error.\n","Category 'sports' done. Waiting 2 seconds...\n","Collecting stories for category: science...\n","Skipping ID 47676044 due to fetch error.\n","Skipping ID 47638075 due to fetch error.\n","Skipping ID 47627419 due to fetch error.\n","Category 'science' done. Waiting 2 seconds...\n","Collecting stories for category: entertainment...\n","Category 'entertainment' done. Waiting 2 seconds...\n","------------------------------\n","Collected 104 stories. Saved to data/trends_20260409.json\n"]}]},{"cell_type":"code","source":[],"metadata":{"id":"dHwCcptSf2Dm"},"execution_count":null,"outputs":[]}]}
+import requests
+import json
+import time
+import os
+from datetime import datetime
+
+# Headers set
+HEADERS = {"User-Agent": "TrendPulse/1.0"}
+
+KEYWORDS = {
+    "technology": ["ai", "software", "tech", "code", "computer", "data", "cloud", "api", "gpu", "llm"],
+    "worldnews": ["war", "government", "country", "president", "election", "climate", "attack", "global"],
+    "sports": ["nfl", "nba", "fifa", "sport", "game", "team", "player", "league", "championship"],
+    "science": ["research", "study", "space", "physics", "biology", "discovery", "nasa", "genome"],
+    "entertainment": ["movie", "film", "music", "netflix", "game", "book", "show", "award", "streaming"]
+}
+
+def main():
+    if not os.path.exists('data'):
+        os.makedirs('data')
+        print("Directory 'data' created.")
+
+    # Top 500 story IDs fetch
+    try:
+        top_ids_url = "https://hacker-news.firebaseio.com/v0/topstories.json"
+        response = requests.get(top_ids_url, headers=HEADERS)
+
+        if response.status_code != 200:
+            print(f"Error fetching IDs: Status {response.status_code}")
+            return
+
+        all_ids = response.json()[:500]
+        print(f"Fetched {len(all_ids)} story IDs from HackerNews.")
+    except Exception as e:
+        print(f"Failed to connect to API: {e}")
+        return
+
+    final_data = []
+
+    # filtering data as par categories
+    for category, words in KEYWORDS.items():
+        print(f"Collecting stories for category: {category}...")
+        category_count = 0
+
+        for story_id in all_ids:
+            if category_count >= 25:
+                break
+
+            try:
+                item_url = f"https://hacker-news.firebaseio.com/v0/item/{story_id}.json"
+                item_response = requests.get(item_url, headers=HEADERS)
+
+                if item_response.status_code != 200:
+                    continue
+
+                story = item_response.json()
+
+                if story and 'title' in story:
+                    title_text = story['title'].lower()
+
+                    if any(word in title_text for word in words):
+                        record = {
+                            "post_id": story.get('id'),
+                            "title": story.get('title'),
+                            "category": category,
+                            "score": story.get('score', 0),
+                            "num_comments": story.get('descendants', 0),
+                            "author": story.get('by', 'Unknown'),
+                            "collected_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                        }
+                        final_data.append(record)
+                        category_count += 1
+            except:
+                print(f"Skipping ID {story_id} due to fetch error.")
+                continue
+
+        print(f"Category '{category}' done. Waiting 2 seconds...")
+        time.sleep(2)
+
+    # JSON File save
+    today_str = datetime.now().strftime("%Y%m%d")
+    output_file = f"data/trends_{today_str}.json"
+
+    with open(output_file, 'w') as f:
+        json.dump(final_data, f, indent=4)
+
+    print("-" * 30)
+    print(f"Collected {len(final_data)} stories. Saved to {output_file}")
+
+if __name__ == "__main__":
+    main()
