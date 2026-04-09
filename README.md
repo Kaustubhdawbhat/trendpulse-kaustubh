@@ -16,8 +16,11 @@ The pipeline follows these four stages:
 trendpulse-kaustubh
 
 task1_data_collection.py  # Fetches raw JSON data
+
 task2_data_processing.py  # Cleans data and exports to CSV
+
 task3_analysis.py         # Performs statistical analysis
+
 task4_visualization.py    # Generates PNG charts
 
 data/                     # Stores JSON, analysed.csv and clean.csv files
