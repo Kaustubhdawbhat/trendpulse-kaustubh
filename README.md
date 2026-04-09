@@ -13,20 +13,20 @@ The pipeline follows these four stages:
 
 📁 Repository Structure
 
-trendpulse-kaustubh/
-│
-├── task1_data_collection.py  # Fetches raw JSON data
-├── task2_data_processing.py  # Cleans data and exports to CSV
-├── task3_analysis.py         # Performs statistical analysis
-├── task4_visualization.py    # Generates PNG charts
-│
-├── data/                     # Stores JSON, analysed.csv and clean.csv files
-│   ├── trends_YYYYMMDD.json
-│   ├── trends_clean.csv
-│   └── trends_analysed.csv
-│
-└── outputs/                  # Stores generated 3 charts and dashboard
-    ├── chart1_top_stories.png
-    ├── chart2_categories.png
-    ├── chart3_scatter.png
-    └── dashboard.png
+trendpulse-kaustubh
+
+task1_data_collection.py  # Fetches raw JSON data
+task2_data_processing.py  # Cleans data and exports to CSV
+task3_analysis.py         # Performs statistical analysis
+task4_visualization.py    # Generates PNG charts
+
+data/                     # Stores JSON, analysed.csv and clean.csv files
+trends_YYYYMMDD.json
+trends_clean.csv
+trends_analysed.csv
+
+outputs/                  # Stores generated 3 charts and dashboard
+chart1_top_stories.png
+chart2_categories.png
+chart3_scatter.png
+dashboard.png
