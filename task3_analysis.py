@@ -1,1 +1,71 @@
-{"nbformat":4,"nbformat_minor":0,"metadata":{"colab":{"provenance":[],"authorship_tag":"ABX9TyPTuP8DirPlAurUSP/Aw/Rc"},"kernelspec":{"name":"python3","display_name":"Python 3"},"language_info":{"name":"python"}},"cells":[{"cell_type":"code","execution_count":3,"metadata":{"colab":{"base_uri":"https://localhost:8080/"},"id":"iEmKyNMEDD_4","executionInfo":{"status":"ok","timestamp":1775744106134,"user_tz":-330,"elapsed":38,"user":{"displayName":"Kaustubh Dawbhat","userId":"04829877058264364037"}},"outputId":"01f6c7a2-8e60-4c8f-df88-6250461e4fcf"},"outputs":[{"output_type":"stream","name":"stdout","text":["Loaded data shape: (89, 7)\n","\n","First 5 rows of the dataset:\n","    post_id                                              title    category  \\\n","0  47695012  USB for Software Developers: An introduction t...  technology   \n","1  47701233    Claude mixes up who said what and that's not OK  technology   \n","2  47702196  Show HN: CSS Studio. Design by hand, code by a...  technology   \n","3  47687273         Git commands I run before reading any code  technology   \n","4  47700084     Code Is Cheap Now, and That Changes Everything  technology   \n","\n","   score  num_comments      author         collected_at  \n","0    339            39     WerWolv  2026-04-09 13:44:59  \n","1    212           194  sixhobbits  2026-04-09 13:44:59  \n","2     58            46    SirHound  2026-04-09 13:44:59  \n","3   2112           456  grepsedawk  2026-04-09 13:44:59  \n","4     24             3      v-mdev  2026-04-09 13:44:59  \n","\n","Average Score: 191.63\n","Average Comments: 85.45\n","\n","NumPy Statistics: \n","\n","Mean Score: 191.63\n","Median Score: 59.0\n","Standard Deviation: 321.83\n","Highest Score: 2112\n","Lowest Score: 5\n","Most stories in: technology (24 stories)\n","Most commented story: \"Project Glasswing: Securing critical software for the AI era\" — 810 comments\n","\n","New columns 'engagement' and 'is_popular' added successfully.\n","\n","Analysis are complete.\n","Saved updated data to data/trends_analysed.csv\n"]}],"source":["import pandas as pd\n","import numpy as np\n","import os\n","\n","def analyze_data():\n","    # Load and Explore\n","    file_path = \"/content/trends_clean.csv\"\n","    # file_path = \"data/trends_clean.csv\"\n","\n","    if not os.path.exists(file_path):\n","        print(\"Error: trends_clean.csv are not found.\")\n","        print(\"Please check csv file.\")\n","        return\n","\n","    df = pd.read_json(file_path) if file_path.endswith('.json') else pd.read_csv(file_path)\n","    df = pd.read_csv(file_path)\n","\n","    print(f\"Loaded data shape: {df.shape}\")\n","    print(\"\\nFirst 5 rows of the dataset:\")\n","    print(df.head())\n","\n","    # Calculating basic averages\n","    avg_score = df['score'].mean()\n","    avg_comments = df['num_comments'].mean()\n","    print(f\"\\nAverage Score: {avg_score:.2f}\")\n","    print(f\"Average Comments: {avg_comments:.2f}\")\n","\n","    # Analysis using NumPy\n","    print(\"\\nNumPy Statistics: \\n\")\n","\n","    # Using NumPy for statistical calculations\n","    scores_array = df['score'].to_numpy()\n","\n","    mean_score = np.mean(scores_array)\n","    median_score = np.median(scores_array)\n","    std_score = np.std(scores_array)\n","    max_score = np.max(scores_array)\n","    min_score = np.min(scores_array)\n","\n","    print(f\"Mean Score: {mean_score:.2f}\")\n","    print(f\"Median Score: {median_score}\")\n","    print(f\"Standard Deviation: {std_score:.2f}\")\n","    print(f\"Highest Score: {max_score}\")\n","    print(f\"Lowest Score: {min_score}\")\n","\n","    # Finding category\n","    top_category = df['category'].value_counts().idxmax()\n","    top_cat_count = df['category'].value_counts().max()\n","    print(f\"Most stories in: {top_category} ({top_cat_count} stories)\")\n","\n","    most_commented_idx = df['num_comments'].idxmax()\n","    most_commented_story = df.loc[most_commented_idx]\n","\n","    print(f\"Most commented story: \\\"{most_commented_story['title']}\\\" — {most_commented_story['num_comments']} comments\")\n","\n","    # Adding New Columns\n","    df['engagement'] = df['num_comments'] / (df['score'] + 1)\n","\n","    df['is_popular'] = df['score'] > avg_score\n","\n","    print(\"\\nNew columns 'engagement' and 'is_popular' added successfully.\")\n","\n","    # Result save\n","    output_path = \"data/trends_analysed.csv\"\n","    os.makedirs(os.path.dirname(output_path), exist_ok=True)\n","    df.to_csv(output_path, index=False)\n","\n","    print(f\"\\nAnalysis are complete.\\nSaved updated data to {output_path}\")\n","\n","if __name__ == \"__main__\":\n","    analyze_data()"]},{"cell_type":"code","source":[],"metadata":{"id":"QzrUgyGtDzcs"},"execution_count":null,"outputs":[]}]}
+import pandas as pd
+import numpy as np
+import os
+
+def analyze_data():
+    # Load and Explore
+    file_path = "/content/trends_clean.csv"
+    # file_path = "data/trends_clean.csv"
+
+    if not os.path.exists(file_path):
+        print("Error: trends_clean.csv are not found.")
+        print("Please check csv file.")
+        return
+
+    df = pd.read_json(file_path) if file_path.endswith('.json') else pd.read_csv(file_path)
+    df = pd.read_csv(file_path)
+
+    print(f"Loaded data shape: {df.shape}")
+    print("\nFirst 5 rows of the dataset:")
+    print(df.head())
+
+    # Calculating basic averages
+    avg_score = df['score'].mean()
+    avg_comments = df['num_comments'].mean()
+    print(f"\nAverage Score: {avg_score:.2f}")
+    print(f"Average Comments: {avg_comments:.2f}")
+
+    # Analysis using NumPy
+    print("\nNumPy Statistics: \n")
+
+    # Using NumPy for statistical calculations
+    scores_array = df['score'].to_numpy()
+
+    mean_score = np.mean(scores_array)
+    median_score = np.median(scores_array)
+    std_score = np.std(scores_array)
+    max_score = np.max(scores_array)
+    min_score = np.min(scores_array)
+
+    print(f"Mean Score: {mean_score:.2f}")
+    print(f"Median Score: {median_score}")
+    print(f"Standard Deviation: {std_score:.2f}")
+    print(f"Highest Score: {max_score}")
+    print(f"Lowest Score: {min_score}")
+
+    # Finding category
+    top_category = df['category'].value_counts().idxmax()
+    top_cat_count = df['category'].value_counts().max()
+    print(f"Most stories in: {top_category} ({top_cat_count} stories)")
+
+    most_commented_idx = df['num_comments'].idxmax()
+    most_commented_story = df.loc[most_commented_idx]
+
+    print(f"Most commented story: \"{most_commented_story['title']}\" — {most_commented_story['num_comments']} comments")
+
+    # Adding New Columns
+    df['engagement'] = df['num_comments'] / (df['score'] + 1)
+
+    df['is_popular'] = df['score'] > avg_score
+
+    print("\nNew columns 'engagement' and 'is_popular' added successfully.")
+
+    # Result save
+    output_path = "data/trends_analysed.csv"
+    os.makedirs(os.path.dirname(output_path), exist_ok=True)
+    df.to_csv(output_path, index=False)
+
+    print(f"\nAnalysis are complete.\nSaved updated data to {output_path}")
+
+if __name__ == "__main__":
+    analyze_data()
