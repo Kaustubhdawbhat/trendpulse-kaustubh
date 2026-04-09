@@ -1,0 +1,90 @@
+post_id,title,category,score,num_comments,author,collected_at
+47695012,USB for Software Developers: An introduction to writing userspace USB drivers,technology,339,39,WerWolv,2026-04-09 13:44:59
+47701233,Claude mixes up who said what and that's not OK,technology,212,194,sixhobbits,2026-04-09 13:44:59
+47702196,"Show HN: CSS Studio. Design by hand, code by agent",technology,58,46,SirHound,2026-04-09 13:44:59
+47687273,Git commands I run before reading any code,technology,2112,456,grepsedawk,2026-04-09 13:44:59
+47700084,"Code Is Cheap Now, and That Changes Everything",technology,24,3,v-mdev,2026-04-09 13:44:59
+47689174,MegaTrain: Full Precision Training of 100B+ Parameter LLMs on a Single GPU,technology,313,55,chrsw,2026-04-09 13:44:59
+47696035,John Deere to pay $99M in right-to-repair settlement,technology,341,115,CharlesW,2026-04-09 13:45:00
+47699814,Process Manager for Autonomous AI Agents,technology,53,12,ankitg12,2026-04-09 13:45:00
+47689237,US cities are axing Flock Safety surveillance technology,technology,721,407,giuliomagnifico,2026-04-09 13:45:00
+47693679,I've been waiting over a month for Anthropic to respond to my billing issue,technology,381,183,nickvec,2026-04-09 13:45:01
+47656518,Your File System Is Already A Graph Database,technology,176,74,alxndr,2026-04-09 13:45:01
+47701971,AI and remote work is a disaster for junior software engineers,technology,11,3,gpi,2026-04-09 13:45:01
+47679121,Project Glasswing: Securing critical software for the AI era,technology,1501,810,Ryan5453,2026-04-09 13:45:01
+47698067,You Can Just Print an Air Purifier,technology,29,2,zdw,2026-04-09 13:45:02
+47674606,Show HN: Unicode Steganography,technology,53,13,PatrickVuscan,2026-04-09 13:45:02
+47700972,Reallocating $100/Month Claude Code Spend to Zed and OpenRouter,technology,66,78,kisamoto,2026-04-09 13:45:02
+47692661,Show HN: TUI-use: Let AI agents control interactive terminal programs,technology,48,37,dreamsome,2026-04-09 13:45:03
+47689319,Show HN: Skrun – Deploy any agent skill as an API,technology,56,9,frizull,2026-04-09 13:45:03
+47685945,We moved Railway's frontend off Next.js. Builds went from 10+ mins to under 2,technology,210,198,bundie,2026-04-09 13:45:03
+47624572,A database of analog cameras that can be 3D printed,technology,164,26,thomasjb,2026-04-09 13:45:03
+47699963,AI Cybersecurity After Mythos: The Jagged Frontier,technology,8,2,evelinag,2026-04-09 13:45:04
+47699090,'There's a lot of desperation': older workers turn to AI training to stay afloat,technology,31,8,Stratoscope,2026-04-09 13:45:04
+47672295,Every GPU That Mattered,technology,328,204,jonbaer,2026-04-09 13:45:04
+47696558,Finetuning Activates Verbatim Recall of Copyrighted Books in LLMs,technology,14,3,guitarlimeo,2026-04-09 13:45:05
+47692043,Muse Spark: Scaling towards personal superintelligence,worldnews,366,348,chabons,2026-04-09 13:45:09
+47677853,GLM-5.1: Towards Long-Horizon Tasks,worldnews,611,255,zixuanlimit,2026-04-09 13:45:18
+47656682,Winners of the 2026 Kokuyo Design Awards,worldnews,55,18,zdw,2026-04-09 13:45:24
+47680124,IPv6 is the only way forward,worldnews,99,302,quaintdev,2026-04-09 13:45:24
+47676557,Moving fast in hardware: lessons from lab to $100M ARR,worldnews,113,26,rryan,2026-04-09 13:45:25
+47695647,The AI Great Leap Forward,worldnews,109,52,jodah,2026-04-09 13:45:26
+47670981,"Three hundred synths, 3 hardware projects, and one app",worldnews,121,19,ductionist,2026-04-09 13:45:27
+47691313,"Databricks co-founder wins prestigious ACM award, says 'AGI is here already'",worldnews,7,4,salkahfi,2026-04-09 13:45:28
+47660954,German police name alleged leaders of GandCrab and REvil ransomware groups,worldnews,323,160,Bender,2026-04-09 13:45:29
+47629021,Global Physics Photowalk: 2025 winners revealed,worldnews,27,1,ibobev,2026-04-09 13:45:36
+47662945,Show HN: GovAuctions lets you browse government auctions at once,worldnews,317,90,player_piano,2026-04-09 13:45:36
+47647788,The threat is comfortable drift toward not understanding what you're doing,worldnews,977,620,zaikunzhang,2026-04-09 13:45:38
+47694303,The demise of software engineering jobs has been greatly exaggerated,worldnews,19,5,ryan_j_naughton,2026-04-09 13:45:39
+47683613,ICE acknowledges it is using powerful spyware,worldnews,67,8,dnemmers,2026-04-09 13:45:39
+47677952,The Blueprint of a North Korean Attack on Open-Source,worldnews,31,11,brene,2026-04-09 13:45:40
+47690049,Amazon rewards loyal Kindle devotees by closing the book on old e-readers,worldnews,35,23,beardyw,2026-04-09 13:45:40
+47697980,"Account Verification for Windows Hardware Program Begins October 16, 2025",worldnews,5,0,TiredOfLife,2026-04-09 13:45:44
+47692291,"Digital Hopes, Real Power: How the Arab Spring Fueled a Global Surveillance Boom",worldnews,12,0,hn_acker,2026-04-09 13:45:44
+47697711,The World Needs More Software Engineers – Box CEO,worldnews,7,4,alwinaugustin,2026-04-09 13:45:44
+47691860,Supply chain nightmare: How Rust will be attacked and how to mitigate attacks,worldnews,10,0,randomint64,2026-04-09 13:45:49
+47686058,Inside a huge compound where 10k workers scammed people globally,worldnews,8,0,ece,2026-04-09 13:45:53
+47627419,The Axios supply chain attack used individually targeted social engineering,worldnews,47,12,cmitsakis,2026-04-09 13:45:53
+47663743,"Show HN: Moon simulator game, ray-casting",sports,47,10,JKCalhoun,2026-04-09 13:45:57
+47689165,"Show HN: I pipe free sports streams into Jellyfin – no ads, just HLS",sports,104,30,pruz,2026-04-09 13:46:01
+47654629,The Harvard Library Passport,sports,40,15,fi-le,2026-04-09 13:46:10
+47689550,"LLM plays an 8-bit Commander X16 game using structured ""smart senses""",sports,15,0,russellharper,2026-04-09 13:46:11
+47672778,Breaking the console: a brief history of video game security,sports,95,26,sprado,2026-04-09 13:46:11
+47661065,"The team behind a pro-Iran, Lego-themed viral-video campaign",sports,166,261,tantalor,2026-04-09 13:46:12
+47664186,"Battle for Wesnoth: open-source, turn-based strategy game",sports,537,163,akyuu,2026-04-09 13:46:14
+47640728,Show HN: A game where you build a GPU,sports,956,187,Jaso1024,2026-04-09 13:46:15
+47656501,The 1987 game “The Last Ninja” was 40 kilobytes,sports,307,192,keepamovin,2026-04-09 13:46:15
+47637377,LÖVE: 2D Game Framework for Lua,sports,414,217,cl3misch,2026-04-09 13:46:18
+47685704,How the Vision Pro Rollout Inflamed Tensions at Apple,sports,16,4,f_allwein,2026-04-09 13:46:39
+47694234,Strait of Hormuz appears to remain closed amid conflicting US and Iran briefings,sports,20,3,gridder,2026-04-09 13:46:39
+47639727,"When legal sports betting surges, so do Americans' financial problems",sports,222,148,pseudolus,2026-04-09 13:46:43
+47681453,"Sports bets on prediction markets ruled to be ""swaps,"" exempt from state laws",sports,19,6,nradov,2026-04-09 13:46:45
+47633676,"Extra usage credit for Pro, Max, and Team plans",sports,64,62,angst,2026-04-09 13:46:46
+47691869,Façade (2005 Video Game),sports,5,0,jjmarr,2026-04-09 13:46:47
+47644726,"Power-washing, pool-cleaning and mowing – playing games about mundane jobs",sports,24,4,andsoitis,2026-04-09 13:46:48
+47622717,Study investigates how mass distribution of baseball bat affects performance,science,24,17,Magi604,2026-04-09 13:46:57
+47627217,Running out of disk space in production,science,218,127,romes,2026-04-09 13:47:00
+47650502,Computational Physics (2nd Edition) (2025),science,184,22,teleforce,2026-04-09 13:47:11
+47665207,SOM: A minimal Smalltalk for teaching of and research on Virtual Machines,science,56,0,tosh,2026-04-09 13:47:13
+47656303,Case study: recovery of a corrupted 12 TB multi-device pool,science,116,64,salt4034,2026-04-09 13:47:14
+47694520,Gmail / Google Workspace Incendent Underway,science,8,2,vapemaster,2026-04-09 13:47:20
+47691409,Reproducibility and robustness of economics and political science research,science,5,0,lamename,2026-04-09 13:47:21
+47648404,My Google Workspace account suspension,science,369,221,zenincognito,2026-04-09 13:47:22
+47629485,A case study in testing with 100+ Claude agents in parallel,science,67,54,thejash,2026-04-09 13:47:23
+47694522,"With Orion still flying, NASA is nearing key decisions about Artemis III",science,9,2,LorenDB,2026-04-09 13:47:24
+47702791,Show HN: 41 years sea surface temperature anomalies,entertainment,34,7,willmeyers,2026-04-09 13:47:40
+47702647,"Launch HN: Relvy (YC F24) – On-call runbooks, automated",entertainment,9,9,behat,2026-04-09 13:47:41
+47676561,Teardown of unreleased LG Rollable shows why rollable phones aren't a thing,entertainment,116,50,DamnInteresting,2026-04-09 13:47:43
+47666398,Show HN: A (marginally) useful x86-64 ELF executable in 301 bytes,entertainment,56,16,meribold,2026-04-09 13:47:43
+47696562,Show HN: Is Hormuz open yet?,entertainment,418,179,anonfunction,2026-04-09 13:47:43
+47694036,Show HN: Orange Juice – Small UX improvements that make HN easier to read,entertainment,120,137,latchkey,2026-04-09 13:47:44
+47690797,Show HN: Go-Bt: Minimalist Behavior Trees for Go,entertainment,59,9,rvitorper,2026-04-09 13:47:45
+47661038,Show HN: I built a navigation app that displays weather along the route,entertainment,52,23,vkatluri,2026-04-09 13:47:45
+47657204,Show HN: We built a camera only robot vacuum for less than 300$ (Well almost),entertainment,105,57,indraneelpatil,2026-04-09 13:47:45
+47673360,Show HN: Brutalist Concrete Laptop Stand (2024),entertainment,776,233,sam-bee,2026-04-09 13:47:47
+47699105,Show HN: Image to Music AI – Turn Any Photo into an Original Soundtrack,entertainment,5,3,airobus,2026-04-09 13:47:48
+47681112,Show HN: An interactive map of Tolkien's Middle-earth,entertainment,283,66,frasermarlow,2026-04-09 13:47:49
+47697679,I built a tool to let you export your X bookmarks and categorize them,entertainment,16,8,xarchive,2026-04-09 13:47:49
+47680309,Show HN: Gemma 4 Multimodal Fine-Tuner for Apple Silicon,entertainment,225,27,MediaSquirrel,2026-04-09 13:47:50
+47691174,Show HN: Explore the Silk Roads through an interactive map,entertainment,47,6,intofarlands,2026-04-09 13:47:51
+47693407,Show HN: 500k+ events/sec transformations for ClickHouse ingestion,entertainment,12,3,super_ar,2026-04-09 13:47:51
